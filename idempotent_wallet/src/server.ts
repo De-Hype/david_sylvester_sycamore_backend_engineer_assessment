@@ -1,17 +1,17 @@
 import app from "./app";
-import sequelize from "./config/db";
+import { sequelize } from "./models";
 
 const PORT = process.env.PORT || 3000;
 
-async function startServer() {
+async function start() {
   try {
     await sequelize.authenticate();
-    await sequelize.sync({ force: true });
-    console.log("DB connected");
+    console.log("DB connected successfully");
+    await sequelize.sync();
     app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
   } catch (err) {
-    console.error(err);
+    console.error("DB connection failed", err);
   }
 }
 
-startServer();
+start();
