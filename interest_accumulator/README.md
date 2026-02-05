@@ -12,7 +12,7 @@ This is a backend service that calculates and applies daily compound interest to
 
 1.  Clone the repository:
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/De-Hype/david_sylvester_sycamore_backend_engineer_assessment.git
     cd interest_accumulator
     ```
 
