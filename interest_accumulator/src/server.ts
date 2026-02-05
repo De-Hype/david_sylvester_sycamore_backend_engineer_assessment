@@ -8,7 +8,7 @@ async function start() {
     await sequelize.authenticate();
     console.log("DB connected successfully");
     await sequelize.sync();
-    app.listen(PORT, () => console.log(`Server running on port ${PORT} for idempotent_wallet app`));
+    app.listen(PORT, () => console.log(`Server running on port ${PORT} for interest_accumulator app`));
   } catch (err) {
     console.error("DB connection failed", err);
   }

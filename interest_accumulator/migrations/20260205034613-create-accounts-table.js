@@ -3,7 +3,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('wallets', {
+    await queryInterface.createTable('accounts', {
       id: {
         type: Sequelize.UUID,
         primaryKey: true,
@@ -11,9 +11,14 @@ module.exports = {
         defaultValue: Sequelize.UUIDV4,
       },
       balance: {
-        type: Sequelize.DECIMAL(20, 6),
+        type: Sequelize.DECIMAL(30, 10),
         allowNull: false,
-        defaultValue: "0",
+        defaultValue: "0.0",
+      },
+      lastInterestApplied: {
+        type: Sequelize.DATEONLY,
+        allowNull: false,
+        defaultValue: Sequelize.NOW,
       },
       createdAt: {
         allowNull: false,
@@ -29,6 +34,6 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('wallets');
+    await queryInterface.dropTable('accounts');
   },
 };

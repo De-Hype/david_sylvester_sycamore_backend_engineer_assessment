@@ -1,0 +1,65 @@
+{
+  "name": "interest_accumulator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "test": "jest --runInBand --detectOpenHandles",
+    "test:coverage": "jest --runInBand --detectOpenHandles --coverage"
+  },
+  "keywords": [
+    "fintech",
+    "wallet",
+    "typescript",
+    "sequelize",
+    "express",
+    "idempotent"
+  ],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.26.0",
+  "dependencies": {
+    "decimal.js": "^10.6.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "pg": "^8.18.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.7"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^25.2.0",
+    "@types/supertest": "^6.0.3",
+    "jest": "^30.2.0",
+    "nodemon": "^3.1.11",
+    "sequelize-cli": "^6.6.5",
+    "supertest": "^7.2.2",
+    "ts-jest": "^29.4.6",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "testMatch": [
+      "**/tests/**/*.test.ts"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": [
+        "ts-jest",
+        {
+          "tsconfig": "tsconfig.json"
+        }
+      ]
+    }
+  }
+}
